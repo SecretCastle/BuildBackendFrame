@@ -53,4 +53,10 @@ modify `scripts`
 }
 ```
 
+### 现增加开发模式和生产模式配置
+
+配置文件位于```/build/webpack.[dev/prod].js```，可根据需要，在不同的模式中配置plugins。基础配置文件```webpack.base.js```中的是公共的配置，可按需在公共配置中增删改。
+
+具体参考[webpack文档](https://doc.webpack-china.org/guides/)
+
 
