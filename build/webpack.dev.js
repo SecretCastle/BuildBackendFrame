@@ -6,9 +6,7 @@ const basejs = require('./webpack.base.js');
 
 module.exports = merge(basejs, {
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env': 'development'
-        }),
+        
     ],
     devServer: {
         //开发模式下的代理
