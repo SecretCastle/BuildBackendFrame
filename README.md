@@ -5,7 +5,11 @@ webpack+es6+babel+eslint基础环境搭建框架
 ```JavaScript
 git clone https://github.com/FerrariCar/template.git
 
-git remote set-url [new url]
+git remote remove origin 
+
+git remote add origin [xxxxx(new URL)]
+
+npm start 选择你需要安装的（目前支持Vue和React以及还原默认文件配置）
 
 npm install
 
