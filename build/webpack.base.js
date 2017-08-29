@@ -3,9 +3,11 @@ const path = require('path');
 
 
 module.exports = {
-    entry: './index.js',
+    entry: './src/index.js',
     externals: {
-        jquery: 'window.$'
+        jquery: 'window.$',
+        'react':'React',
+        'react-dom':'ReactDOM'
     },
     output: {
         filename: 'bundle.js',
