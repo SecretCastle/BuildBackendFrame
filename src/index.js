@@ -8,11 +8,32 @@ root file
 import './assets/main'
 
 import App from './components/app'
-import Routes from './router/index'
-import { Router , hashHistory} from 'react-router'
+import { Router , hashHistory  } from 'react-router'
 
+const RouterConfig = {
+    childRoutes:[
+        {
+            path:'/',
+            component: App,
+            indexRoute: {
+                onEnter :(nextState , replace) => replace('/app/dashboard')
+            },
+            childRoutes:[
+                require('./routes/app'),
+                require('./routes/404'),
+                {
+                    path:'*',
+                    indexRoute: { onEnter: (nextState, replace) => replace('/404') }
+                }
+            ]
+        }
+    ]
+}
 
 ReactDOM.render(
-    <Router history= {hashHistory} routes={Routes}/>,
+    <Router 
+        history= {hashHistory} 
+        routes={RouterConfig}
+    />,
     document.getElementById('App')
 )

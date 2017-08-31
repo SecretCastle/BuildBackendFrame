@@ -1,5 +1,7 @@
 import Paper from 'material-ui/Paper'
 const className = require('classname')
+import ProductList from './product/product_list/index'
+
 
 class ContentMain extends React.Component{
     render(){
@@ -15,10 +17,13 @@ class ContentMain extends React.Component{
         const listItems = numbers.map((number) =>
           <li key={number.toString()}>{number}</li>
         );
-    
+        
+
+        //这里还有路由要写
+        
         return (
             <div className = {contentWrapStyle}>
-                <ul>{listItems}</ul>
+                <ProductList />
             </div>
         )
     }
