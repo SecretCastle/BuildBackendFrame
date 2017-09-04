@@ -9,6 +9,9 @@ import './assets/main'
 
 import App from './components/app'
 import { Router , hashHistory  } from 'react-router'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import todoApp from './reducers'
 
 const RouterConfig = {
     childRoutes:[
@@ -30,10 +33,15 @@ const RouterConfig = {
     ]
 }
 
+const store = createStore(todoApp)
+
 ReactDOM.render(
-    <Router 
-        history= {hashHistory} 
-        routes={RouterConfig}
-    />,
+    <Provider store={store}>
+        <Router 
+            history= {hashHistory} 
+            routes={RouterConfig}
+        />
+    </Provider>
+    ,
     document.getElementById('App')
 )
